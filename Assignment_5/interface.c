@@ -9,7 +9,7 @@ int main(void) {
 	STACK newStack;
 	char inputString[STACK_DEPTH] = { '\0' };
 
-	printf("\nEnter a string thats %d or less characters.", STACK_DEPTH);						
+	printf("\nEnter a string thats %d or less characters: ", STACK_DEPTH);						
 	scanf_s("%s", inputString, STACK_DEPTH);													// gets string input
 
 	if (strlen(inputString) > STACK_DEPTH || strlen(inputString) <= 0) {						// input validation

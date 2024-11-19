@@ -10,8 +10,8 @@
 STACK CreateStack(char stackData[]) {
 	STACK newStack;
 	int stackDepthFinder = 0;
-	char saveData[STACK_DEPTH] = { '\0' };
-	strncpy(saveData, stackData, STACK_DEPTH);
+	char saveData[STACK_DEPTH] = { '\0' };									// temp string
+	strncpy(saveData, stackData, STACK_DEPTH);								// saves data into temp variable
 
 	for (int i = 0; i < STACK_DEPTH; i++) {									// this for loop see if each element has something in it 
 		if (stackData[i] != '\0')
@@ -19,9 +19,10 @@ STACK CreateStack(char stackData[]) {
 		else
 			break;
 	}
-	for (int x = 0; x < stackDepthFinder; x++) {
+
+	for (int x = 0; x < stackDepthFinder; x++) {							// sorts data back to front
 		if (stackData[x] != '\0')
-			stackData[stackDepthFinder - x] = saveData[x];
+			stackData[stackDepthFinder - (x+1)] = saveData[x];				// puts the last element into first and then keeps going
 		else
 			break;
 	}
@@ -32,12 +33,7 @@ STACK CreateStack(char stackData[]) {
 }
 
 void PrintStack(STACK* newStack) {
-	for (int x = 0; x < STACK_DEPTH; x++) {
-		if (newStack->stackData[x] != '\0')
-			printf("%c", newStack->stackData[x]);
-		else
-			break;
-		}
+	printf("%s", newStack->stackData);
 }
 
 void DestroyStack(STACK* newStack) {
