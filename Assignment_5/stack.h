@@ -10,13 +10,10 @@
 
 typedef struct stack {
 	char stackData[STACK_DEPTH];													// data within stack
-	int counter;																	// counter to help find next open spot in stack
 } STACK;
 
-STACK CreateStack(STACK* newStack, char stackData[], int counter);
+STACK CreateStack(char stackData[]);
 
-STACK SortStack(STACK* newStack, char stackData[], int counter);					// sorts data (LIFO)
-
-STACK PrintStack(STACK* newStack);
+void PrintStack(STACK* newStack);
 
 void DestroyStack(STACK* newStack);

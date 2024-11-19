@@ -6,8 +6,8 @@
 // main implementation for stack's data
 
 int main(void) {
-															
-	char inputString[STACK_DEPTH] = { 0 };
+	STACK newStack;
+	char inputString[STACK_DEPTH] = { '\0' };
 
 	printf("\nEnter a string thats %d or less characters.", STACK_DEPTH);						
 	scanf_s("%s", inputString, STACK_DEPTH);													// gets string input
@@ -17,6 +17,8 @@ int main(void) {
 		return 1;
 	}
 
+	newStack = CreateStack(inputString);
+	PrintStack(&newStack);
 
 	return 0; 
 
