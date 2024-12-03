@@ -17,7 +17,7 @@ typedef struct stack {
 	int stackSize;
 } Stack;
 
-Stack createStack();
+Stack* createStack();
 
 void push(Stack* Stack, char letter);
 

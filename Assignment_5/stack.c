@@ -21,7 +21,7 @@ o Documentation : 4.00 / 4.00 (The documentation is well written and clearly exp
 
 */
 
-Stack createStack() {														// takes stack and its capacity
+Stack* createStack() {														// takes stack and its capacity
 	Stack newStack;
 	newStack.top = -1;														// saves top as -1;
 	newStack.stackSize = STACK_SIZE;										// saves capacity
@@ -32,7 +32,7 @@ Stack createStack() {														// takes stack and its capacity
 	}
 
 
-	return newStack;
+	return &newStack;
 }
 
 // pus takes the element (letter) 

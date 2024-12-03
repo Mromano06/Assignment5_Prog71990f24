@@ -14,7 +14,7 @@ int main(void) {
 
 	
 	char inputBuffer[MAXINPUT];
-	printf("enter a word");
+	printf("enter a word: ");
 	scanf("%[^\n]s", &inputBuffer);
 
 
@@ -25,12 +25,12 @@ int main(void) {
 
 	char ch;
 	while (ch = pop(stack))
-		print("%c", &ch);
+		printf("%c", &ch);
 
 
 	printf("\n");
 
 
-	disposrStack(stack);
+	disposeStack(stack);
 		return 0;
 }
