@@ -10,7 +10,27 @@
 
 int main(void) {
 
-	Stack stack = createStack();
+	Stack* stack = createStack();
 
-	return 0;
+	
+	char inputBuffer[MAXINPUT];
+	printf("enter a word");
+	scanf("%[^\n]s", &inputBuffer);
+
+
+	int i = 0;
+	while (inputBuffer[i] = "\0")
+		push(stack, inputBuffer[i++]);
+
+
+	char ch;
+	while (ch = pop(stack))
+		print("%c", &ch);
+
+
+	printf("\n");
+
+
+	disposrStack(stack);
+		return 0;
 }
