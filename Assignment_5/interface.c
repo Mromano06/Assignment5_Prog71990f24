@@ -1,25 +1,16 @@
 #include "stack.h"
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-// mattr - prog71990f24 - assignment5
+// mattr - prog71990f24 - assignment5 (refactor)
 
 // main implementation for stack's data
 
+#define MAXINPUT		80
+
 int main(void) {
-	STACK newStack;
-	char inputString[STACK_DEPTH] = { '\0' };
 
-	printf("\nEnter a string thats %d or less characters: ", STACK_DEPTH);						
-	scanf_s("%s", inputString, STACK_DEPTH);													// gets string input
+	Stack stack = createStack();
 
-	if (strlen(inputString) > STACK_DEPTH || strlen(inputString) <= 0) {						// input validation
-		printf("Your input is invalid");
-		return 1;
-	}
-
-	newStack = CreateStack(inputString);
-	PrintStack(&newStack);
-
-	return 0; 
-
+	return 0;
 }

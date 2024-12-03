@@ -1,19 +1,32 @@
 #pragma once
 
-#include <string.h>
+#include <stdbool.h>
 
-// mattr - prog71990f24 - assignment5
+// mattr - prog71990f24 - assignment5 (refactor)
 
 // header file for stacks
 
-#define STACK_DEPTH						50											// size of the stack, easily editable
+#define STACK_SIZE			80
 
+// data = array of characters
+// top = top of stack
+// capacity is the stacks capacity
 typedef struct stack {
-	char stackData[STACK_DEPTH];													// data within stack
-} STACK;
+	char* data;
+	int top;
+	int stackSize;
+} Stack;
 
-STACK CreateStack(char stackData[]);
+Stack createStack();
 
-void PrintStack(STACK* newStack);
+void push(Stack* Stack, char letter);
 
-void DestroyStack(STACK* newStack);
+char pop(Stack* Stack);
+
+char top(Stack* Stack);
+
+bool isEmpty(Stack* Stack);
+
+bool isFull(Stack* Stack);
+
+void disposeStack(Stack* Stack);
